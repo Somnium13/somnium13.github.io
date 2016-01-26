@@ -8,7 +8,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Bootstrap 101 Template</title>
+		<title>Somnium13</title>
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,12 +19,133 @@
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		
+		<style>
+			.nav-pills {
+				margin: 20px;
+			}
+			footer {
+				margin-top: 20px;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Somnium13</h1>
-		<h2>Let's make SS13 great again!</h2>
-		<p>Somnium13 is a new engine for Space Station 13. It uses existing code, translated to C#.</p>
-	
+		<div class="container">
+		
+			
+			<ul class="nav nav-pills" role="tablist">
+				<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+				<li role="presentation"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">Projects</a></li>
+				<li role="presentation"><a href="#why" aria-controls="why" role="tab" data-toggle="tab">Why?</a></li>
+				<li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab">FAQ</a></li>
+			</ul>
+
+			<div class="tab-content">
+				
+				<div role="tabpanel" class="tab-pane active" id="home">
+					<div class="jumbotron">
+						<h1>Somnium13</h1>
+						<h2>Let's make Space Station 13 great again!</h2>
+						<i>Somnium13 is a quest to transcompile Space Station 13 to C# and build a new engine around it.</i>
+					</div>
+					
+					<div class="panel panel-info">
+						<div class="panel-heading">Hello, World!</div>
+						<div class="panel-body">
+							<p>
+								I've made this website to serve as a better hub for information about my project.
+								I'm not so good at the web design. I'm too busy getting shit done to care that I'm using the default Bootstrap style.
+								This will serve as a sort of development blog.
+							</p>
+							<b>1/25/16</b>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div role="tabpanel" class="tab-pane" id="projects">
+					<p>These are the verious sub-projects that make up Somnium13!</p>
+					<ul>
+						<li><a href="https://github.com/somnium13/somnium-ss13">Space Station 13</a>: This is the transcompiled, active branch. It is based on TG.
+						<li><a href="https://github.com/somnium13/somnium-engine">Somnium Engine</a>: The new game engine. Designed to replicate the functions of the old engine and eventually do fancy new stuff!
+						<li><a href="https://github.com/somnium13/somnium-client">Somnium Client</a>: The new client. It's a webclient!
+						<li><a href="https://github.com/somnium13/somnium13.github.io">somnium13.github.io</a>: This site! 
+						<li><b>Somnium Transcompiler</b>: This is what converts DM to C#. I am not going to release it.
+					</ul>
+					<i>Note that the engine and game repos may be merged together at some point.</i>
+				</div>
+				
+				<div role="tabpanel" class="tab-pane" id="why">
+					<h4>Because we can! For real, though...</h4>
+					<h2>A Robust Proposal</h2>
+					
+					<p>
+						First things first. BYOND is not ideal for Space Station 13.
+						It's great in a lot of ways.
+						It empowers amatures to learn object oriented programming and make multiplayer games.
+						Its IDE contains a level editor and an image editor.
+						But it was designed for MUDs.
+						It supports Telnet.
+						It has very poor cross-platform support.
+						It uses an obscure, error-prone scripting language with many peculiarities.
+						Its networking is bad.
+						It's almost impossible to get threading to work.
+					</p><p>
+						There have been many, many attempts to remake Space Station 13 in other game engines.
+						None of these attempts has been incredibly successful.
+						This isn't because these developers are incompetent.
+						It's because it's nearly impossible.
+						SS13 is a very complex game with a huge codebase.
+						It would be difficult for any group of developers to create a stand alone version.
+					</p><p>
+						It's especially difficult for professional developers to pick up, considering the size of the community and the already open nature of the code.
+						There's very little potential for profit considering the game's niche appeal. One of the best parts of SS13is its potential for customization.
+						Modding is not easy to get right, especially on the scale that a SS13 remake would require.
+					</p><p>
+						Sadly, the prospects aren't much better for hobbyists.
+						The several groups working on clones independently hinders efforts more than it helps.
+						It's discouraging for both developers and players when three clones exist and they all have very little to show.
+						Neither will migrate from a community with active development to a remake with a fraction of the features.
+					</p><p>
+						Almost all attempts are over-ambitous and include plans to remake all the assets or even make the game 3D.
+						Creating 3D assets, complete with textures and animations, is considerably more difficult than small 2D sprites.
+						It also limits the ability of a newbie or a coder with poor art skills to create assets.
+					</p><p>
+						After watching many clones come and go (several of them my own), I decided that the best way to approach the problem would be the most backwards sounding.
+						We needed to extract SS13 from BYOND, translate it into a modern language, and build a new engine around it.
+						This is an ideal solution for the following reasons:
+					</p>
+					<ol>
+						<li>Code does not need to be remade.
+						<li>Art assets do not need to be remade.
+						<li>C# is a modern OO language that is used for real software, has actual library support, is less error-prone, can be threaded, is more efficient... I could go on...
+						<li>Both the engine and client can be custom-built the way we want.
+						<li>Development of BYOND versions can continue in parallel. New features can be ported to our version.
+						<li>We can find errors in the code more easily, and push changes back to the BYOND versions. (I have already done this once. I'm sitting on a small list of issues that I still need to PR...)
+						<li>We will have much more potential for cool shit once we can edit the engine the game runs on.
+					</ol>
+				</div>
+				
+				<div role="tabpanel" class="tab-pane" id="faq">
+					<i>I'll try to address your concerns here.</i>
+
+					<h3>How does this differ from OpenBYOND?</h3>
+					The two projects are similar, but OpenBYOND still relies on BYOND's scripting language, whereas this project aims to get rid of the damn thing ASAP. For what it's worth, OpenBYOND seems to be abandoned.
+					<h3>Why does the code look like ass?</h3>
+					The transcompiler is still under development. Currently correctness is being prioritized over readability.
+					The code also currently contains some debug information.
+					Readability and organization will be improved very soon!
+				</div>
+				
+				
+				
+			</div>
+		
+			<footer>Contact:  <a href = "mailto:bigboysauceboss@aol.com">bigboysauceboss@aol.com</a></footer>
+			
+			
+		</div>
+		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->

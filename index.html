@@ -129,10 +129,38 @@
 
 					<h3>How does this differ from OpenBYOND?</h3>
 					The two projects are similar, but OpenBYOND still relies on BYOND's scripting language, whereas this project aims to get rid of the damn thing ASAP. For what it's worth, OpenBYOND seems to be abandoned.
+					
+					<h3>Why C#?</h3>
+					A lot of languages were considered during this thing's development. First Lua was considered, since it's what I have the most experience with.
+					I moved on to Squirrel because a lot of it's behavior matched DM's.
+					Eventually I switched to C# because the sheer scale of SS13 would be difficult to manage without statically typed langauge with good tools.
+					Java also fits these criteria, but C# has tons of more features, making it a good deal easier to map DM to.
+					<br><br>
+					I swear to God I will shit myself the next time someone tries to tell me C# doesn't have good
+					<a href="https://github.com/dotnet/coreclr">cross</a>
+					<a href="http://www.ecma-international.org/publications/standards/Ecma-335.htm">platform</a>
+					<a href="http://www.mono-project.com/">support</a>.
+					<br><br>
+					Arguing over programming languages is for turbo nerds. Don't be a turbo nerd.
+					
+					<h3>Why a Webclient?</h3>
+					<a href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/HTML5_APIs_and_related_technologies_taxonomy_and_status.svg/1133px-HTML5_APIs_and_related_technologies_taxonomy_and_status.svg.png">HTML5 is awesome</a>.
+					<a href="http://wtfjs.com/">Javsacript isn't</a>, but it won't be doing much of the heavy lifting.
+					Most parts of the game go hand-in-hand with HTML5: png-based sprites, ogg sounds, a web interface, simplistic networking and rendering...
+					<br><br>
+					I don't know where these performance concerns are coming from. We're talking about 2D spacemen, not Quake.
+					<a href="http://www.quakejs.com/">Which is a thing, by the way</a>.
+					<br><br>
+					I also don't know where the compatability concerns are coming from.
+					If people aren't using a modern browser, they shouldn't be allowed to play the damn game. Period.
+					I've dealt with a lot of shit over the course of this project, and browser compatability is not going to be the thing that stops me.
+					
 					<h3>Why does the code look like ass?</h3>
-					The transcompiler is still under development. Currently correctness is being prioritized over readability.
-					The code also currently contains some debug information.
-					Readability and organization will be improved very soon!
+					It's transpiled, what more can I say.
+					A good deal of effort was put into making it look somewhat sane,
+					but the lack of actual static typing in BYOND my poor type inference spaghetti code took their toll.
+					Many of the odd things you see, such as making all arguments default to null and then setting them to their default values in the function body,
+					are probably not necessary but were precautions taken against fuckuppery.
 				</div>
 				
 				

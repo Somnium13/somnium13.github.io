@@ -49,13 +49,55 @@
 						<i>Somnium13 is a quest to transcompile Space Station 13 to C# and build a new engine around it.</i>
 					</div>
 					
-					<h3>Hello, world!</h3>
+					<h3>Additional Progress</h3>
+					<h4>2/21/16</h4>
+					<p>It's me again. I'm the dumb asshole trying to translate SS13 to C#. I've made a decent amount of progress this week, so I figured I'd share.</p>
 					<p>
-						I've made this website to serve as a better hub for information about my project.
+						About two weeks ago I decided to ask Reddit what codebase to use as a base.
+						We came to a general consensus that /vg/station would be a good idea.
+						I now thoroughly regret this. A lot of terrible things happened, but the
+						short version is that I'm going to stick with /tg/station. This isn't
+						meant as some kind of insult to the authors of Bay or /vg/, it just
+						really didn't work for this particular insane project.
+					</p>
+					<p>
+						The plan is to make the client a webclient, so
+						the next logical step was to get DMIs rendering in the web browser.
+						This is pretty simple on a basic level, they're just PNGs.
+						I wrote a fun little library to deal with icon states and animations, and BLAMO:
+					</p>
+					<img src="img/dmi.gif">
+					<p><i>Yeah, this is a gif. I didn't want to bother with moving all of the content and code onto this site. Deal with it.</i></p>
+					<p>
+						Next I re-wrote the devmap to use these icons! The devmap is a thing I made to spit
+						out the map into the browser, to see just how fucking broken it is. It originally
+						represented each object with a different colored box. Now it's a bit nicer!
+					</p>
+					<img src="img/mapsample.png">
+					<p>The colored squares represent errors:</p>
+					<ul>
+						<li>Green are still loading (This is really odd and really shouldn't be happening here!).
+						<li>Orange represent icons with missing states. This is either a failure on my part to deal with default states (SS13 DEVS: Is this a thing???) or is the result of these objects failing to initialize correctly.
+						<li>Red represents icons that totally failed to load, as in "the file doesn't exist". I didn't find any of these, which is a good sign.
+					</ul>
+					<p>For a larger sample of butchered Space Station, <a href="img/bigmap.png">see here</a>!</p>
+					
+					<p>
+						The plan for this next week is to cut down on the huge slew of exceptions and warnings that get spat out when the game initializes.
+						The map badly needs to load faster. 1:30 is ridiculous. I'll hopefully finally start working on the client as well.
+					</p>
+					
+					<p>I'll hopefully start doing more regular devblogs here. Maybe next week I'll have a less fucked map and some kind of login screen.</p>
+					
+					
+					<h3>Hello, world!</h3>
+					<h4>1/25/16</h4>
+					<p>
+						I've made this website to serve as a better hub for information about the project.
 						This will serve as a sort of development blog.
 						I'm not so good at the web design. I'm too busy getting shit done to care that I'm using the default Bootstrap style.
 					</p>
-					<b>1/25/16</b>
+					
 					
 				</div>
 				
@@ -119,7 +161,7 @@
 						<li>C# is a modern OO language that is used for real software, has actual library support, is less error-prone, can be threaded, is more efficient... I could go on...
 						<li>Both the engine and client can be custom-built the way we want.
 						<li>Development of BYOND versions can continue in parallel. New features can be ported to our version.
-						<li>We can find errors in the code more easily, and push changes back to the BYOND versions. (I have already done this once. I'm sitting on a small list of issues that I still need to PR...)
+						<li>We can find errors in the code more easily, and push changes back to the BYOND versions.
 						<li>We will have much more potential for cool shit once we can edit the engine the game runs on.
 					</ol>
 				</div>

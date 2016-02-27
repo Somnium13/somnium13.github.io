@@ -35,7 +35,7 @@
 			
 			<ul class="nav nav-pills" role="tablist">
 				<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				<li role="presentation"><a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">Projects</a></li>
+				<li role="presentation"><a href="#source" aria-controls="source" role="tab" data-toggle="tab">Source</a></li>
 				<li role="presentation"><a href="#why" aria-controls="why" role="tab" data-toggle="tab">Why?</a></li>
 				<li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab">FAQ</a></li>
 			</ul>
@@ -101,17 +101,14 @@
 					
 				</div>
 				
-				<div role="tabpanel" class="tab-pane" id="projects">
-					<p>These are the verious sub-projects that make up Somnium13!</p>
+				<div role="tabpanel" class="tab-pane" id="source">
+					<p>Somnium13's components live in the following repositories:</p>
 					<ul>
-						<li><a href="https://github.com/somnium13/somnium-ss13">somnium-ss13</a>: This is the transcompiled, active branch. It is based on TG.
-						<li><a href="https://github.com/somnium13/somnium-engine">somnium-engine</a>: The new game engine. Designed to replicate the functions of the old engine and eventually do fancy new stuff!
-						<li><a href="https://github.com/somnium13/somnium-client">somnium-client</a>: The new client. It's a webclient!
-						<li><a href="https://github.com/somnium13/somnium13.github.io">somnium13.github.io</a>: This site! 
+						<li><a href="https://github.com/somnium13/SS13">SS13</a>: This is the transcompiled, active branch. It is based on /tg/station.
+						<li><a href="https://github.com/somnium13/somnium13.github.io">somnium13.github.io</a>: That's this site!
 						<li><b>Somnium Transcompiler</b>: This is what converts DM to C#. I am not going to release it.
 					</ul>
-					<i>Note that the engine and game repos may be merged together at some point.</i>
-					<br><br>
+					<br>
 					<i>Additional codebases will be transcompiled soon on request, so features can be ported.</i>
 				</div>
 				
@@ -204,19 +201,21 @@
 					Many of the odd things you see, such as making all arguments default to null and then setting them to their default values in the function body,
 					are probably not necessary but were precautions taken against fuckuppery.
 				</div>
-				
-				
-				
 			</div>
 		
 			<footer>Contact:  <a href = "mailto:bigboysauceboss@aol.com">bigboysauceboss@aol.com</a></footer>
-			
-			
 		</div>
 		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(".nav-pills a[href="+window.location.hash+"]").tab("show");
+
+			$(".nav-pills a").click(function() {
+				window.location.hash = this.hash;
+			});
+		</script>
 	</body>
 </html>

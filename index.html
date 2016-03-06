@@ -35,7 +35,7 @@
 			
 			<ul class="nav nav-pills" role="tablist">
 				<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				<li role="presentation"><a href="#source" aria-controls="source" role="tab" data-toggle="tab">Source</a></li>
+				<li role="presentation"><a href="https://github.com/Somnium13/SS13">Source</a></li>
 				<li role="presentation"><a href="#why" aria-controls="why" role="tab" data-toggle="tab">Why?</a></li>
 				<li role="presentation"><a href="#faq" aria-controls="faq" role="tab" data-toggle="tab">FAQ</a></li>
 			</ul>
@@ -48,6 +48,40 @@
 						<h2>Make SS13 Great Again!</h2>
 						<i>Somnium13 is a quest to transcompile Space Station 13 to C# and build a new engine around it.</i>
 					</div>
+					
+					<h3>Websockets 'n More</h3>
+					<h4>3/6/2016</h4>
+					<p>I return! The last two weeks have been crazy, and I only managed to get about a week worth of work done.</p>
+					<p>
+						First, I managed to fix some issues with map loading and dramatically improved the devmap output.
+						<a href="img/bettermap.jpg">Here's an image of the center of the station.</a>
+						The main issues left are tables and lattices, which are displayed in an odd way.
+						The devmap also won't show icons created or modified at runtime, and there isn't any code anywhere to deal with them yet.
+					</p>
+					<p>
+						I got some basic networking set up. It uses websockets. The code is kind-of ugly right now, but it's a starting point.
+					</p>
+					<img src="img/client_log.png">
+					<p>
+						The client exists now. The only thing that works now is the login page. The login system clearly needs more than just a username, but I'd
+						rather it be more elegant and secure that having to provide a password for each server you play on.
+						Eventually I'd either like to go with OpenID (Sign in through Steam/Twitter/Google) or have some kind of master server that authenticates
+						clients. Once a client logs in, they get a shitty mockup of game UI.
+					</p>
+					<img src="img/login.png">
+					<img src="img/mockup.png">
+					<p>
+						Goonstation got leaked and is getting an official release.
+						If this had happened earlier I would have totally considered using it as a base,
+						but after the /vg/ incident I think it's best to stick with /tg/ for good.
+					</p>
+					<p>
+						This next week I hope to resolve the rest of the errors with map loading and subsystem initialization,
+						then I'll hopefully make the game able to deal with connecting clients.
+					</p>
+					
+					
+						
 					
 					<h3>Additional Progress</h3>
 					<h4>2/21/16</h4>
@@ -211,7 +245,8 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
 		<script>
-			$(".nav-pills a[href="+window.location.hash+"]").tab("show");
+			if (window.location.hash!="")
+				$(".nav-pills a[href="+window.location.hash+"]").tab("show");
 
 			$(".nav-pills a").click(function() {
 				window.location.hash = this.hash;
